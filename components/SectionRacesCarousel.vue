@@ -18,7 +18,7 @@
       </a>
     </div>
     <div id="tab-halfingai" class="tabcontent">
-      <div class="tabcontent-content">
+      <div class="tabcontent-content container">
         <img src="images/rases_img/Haflingas.png" alt="" />
         <div class="tab-description">
           <h2>Halfingai</h2>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div id="tab-uritonai" class="tabcontent">
-      <div class="tabcontent-content">
+      <div class="tabcontent-content container">
         <img src="images/rases_img/Uritonas.png" alt="" />
         <div class="tab-description">
           <h2>Uritonai</h2>
@@ -67,7 +67,7 @@
       </div>
     </div>
     <div id="tab-tabaksiai" class="tabcontent">
-      <div class="tabcontent-content">
+      <div class="tabcontent-content conatiner">
         <img src="images/rases_img/Tabaksis.png" alt="" />
         <div class="tab-description">
           <h2>Tabaksiai</h2>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div id="tab-minotaurai" class="tabcontent">
-      <div class="tabcontent-content">
+      <div class="tabcontent-content container">
         <img src="images/rases_img/Minotauras.png" alt="" />
         <div class="tab-description">
           <h2>Minotaurai</h2>
