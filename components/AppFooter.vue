@@ -71,6 +71,7 @@ ul {
   list-style: none;
 }
 
-ul > li {
+i {
+  font-size: 1.4rem;
 }
 </style>
