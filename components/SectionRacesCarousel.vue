@@ -1,7 +1,10 @@
 <template>
   <section class="container races">
     <div class="tab">
-      <a class="tablinks" @click="(event) => openCity(event, 'tab-halfingai')">
+      <a
+        class="tablinks active"
+        @click="(event) => openCity(event, 'tab-halfingai')"
+      >
         Halfingai
       </a>
       <a class="tablinks" @click="(event) => openCity(event, 'tab-uritonai')">
