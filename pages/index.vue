@@ -142,9 +142,13 @@
           <h2>Turi klausimų?</h2>
           <h3>Susiek su mumis!</h3>
           <ul>
+            <i class="fa-brands fa-facebook-f" />
             <li>MistinisPasaulis</li>
+            <i class="fa-brands fa-discord"></i>
             <li>MistinisPasaulis</li>
+            <i class="fa-brands fa-facebook"></i>
             <li>MistinisPasaulis</li>
+            <i class="fa-solid fa-envelope"></i>
             <li>MistinisPasaulis</li>
           </ul>
           <div><button>Anketa</button></div>
