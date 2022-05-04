@@ -139,6 +139,8 @@ export default {
 section {
   position: relative;
   height: fit-content;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .tab {
@@ -148,7 +150,7 @@ section {
   justify-content: center;
   gap: 30px;
   cursor: pointer;
-  top: 200px;
+  top: 70px;
 }
 
 /* Create an active/current tablink class */
@@ -162,6 +164,8 @@ section {
   padding: 6px 12px;
   border-top: none;
   width: 100%;
+  padding-top: 10em;
+  padding-bottom: 10em;
 }
 
 .tabcontent-content {
