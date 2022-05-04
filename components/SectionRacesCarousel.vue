@@ -18,8 +18,8 @@
       </a>
     </div>
     <div id="tab-halfingai" class="tabcontent">
+      <img src="images/rases_img/Haflingas.png" alt="" />
       <div class="tabcontent-content container">
-        <img src="images/rases_img/Haflingas.png" alt="" />
         <div class="tab-description">
           <h2>Halfingai</h2>
           <p>
@@ -41,8 +41,8 @@
       </div>
     </div>
     <div id="tab-uritonai" class="tabcontent">
+      <img src="images/rases_img/Uritonas.png" alt="" />
       <div class="tabcontent-content container">
-        <img src="images/rases_img/Uritonas.png" alt="" />
         <div class="tab-description">
           <h2>Uritonai</h2>
           <p>
@@ -67,8 +67,8 @@
       </div>
     </div>
     <div id="tab-tabaksiai" class="tabcontent">
-      <div class="tabcontent-content conatiner">
-        <img src="images/rases_img/Tabaksis.png" alt="" />
+      <img src="images/rases_img/Tabaksis.png" alt="" />
+      <div class="tabcontent-content container">
         <div class="tab-description">
           <h2>Tabaksiai</h2>
           <p>
@@ -88,8 +88,8 @@
       </div>
     </div>
     <div id="tab-minotaurai" class="tabcontent">
+      <img src="images/rases_img/Minotauras.png" alt="" />
       <div class="tabcontent-content container">
-        <img src="images/rases_img/Minotauras.png" alt="" />
         <div class="tab-description">
           <h2>Minotaurai</h2>
           <p>
@@ -151,6 +151,7 @@ section {
   gap: 30px;
   cursor: pointer;
   top: 70px;
+  z-index: 100;
 }
 
 /* Create an active/current tablink class */
@@ -164,24 +165,29 @@ section {
   padding: 6px 12px;
   border-top: none;
   width: 100%;
-  padding-top: 10em;
-  padding-bottom: 10em;
 }
 
 .tabcontent-content {
+  position: relative;
   display: flex;
 }
 
-.tabcontent-content > img {
-  width: 100%;
-  height: auto;
+.tabcontent > img {
+  position: absolute;
+  flex-basis: 50%;
+  height: 100%;
+  width: auto;
 }
 
 .tabcontent-content > .tab-description {
-  flex-basis: 50%;
+  position: relative;
+  flex-basis: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: auto;
+  padding-top: 20em;
+  padding-bottom: 20em;
 }
 
 #tab-halfingai {
