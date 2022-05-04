@@ -136,12 +136,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  position: relative;
+  height: fit-content;
+}
+
 .tab {
+  position: absolute;
   display: flex;
   width: 100%;
   justify-content: center;
   gap: 30px;
   cursor: pointer;
+  top: 200px;
 }
 
 /* Create an active/current tablink class */
