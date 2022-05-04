@@ -136,39 +136,17 @@
       </div>
     </section>
 
-    <footer>
-      <div class="container footer-content">
-        <div>
-          <h2>Turi klausimų?</h2>
-          <h3>Susiek su mumis!</h3>
-          <ul>
-            <i class="fa-brands fa-facebook-f" />
-            <li>MistinisPasaulis</li>
-            <i class="fa-brands fa-discord"></i>
-            <li>MistinisPasaulis</li>
-            <i class="fa-brands fa-facebook"></i>
-            <li>MistinisPasaulis</li>
-            <i class="fa-solid fa-envelope"></i>
-            <li>MistinisPasaulis</li>
-          </ul>
-          <div><button>Anketa</button></div>
-        </div>
-        <img
-          src="/images/rases_img/Pacaskurisapacioj.png"
-          alt="An ugly ass goblin"
-        />
-      </div>
-      <p id="copyright">Visos teisės saugomos @MistinisPasaulis 2022</p>
-    </footer>
+    <app-footer> </app-footer>
   </div>
 </template>
 
 <script>
 import SectionRacesCarousel from '@/components/SectionRacesCarousel.vue'
+import AppFooter from '@/components/AppFooter.vue'
 
 export default {
   name: 'IndexPage',
-  components: { SectionRacesCarousel },
+  components: { SectionRacesCarousel, AppFooter },
 }
 </script>
 
@@ -501,33 +479,4 @@ button {
 }
 
 /* Footer */
-footer {
-  padding-top: 10em;
-}
-
-.footer-content {
-  display: flex;
-  max-width: 800px;
-}
-
-.footer-content > div {
-  flex-basis: 50%;
-}
-
-.footer-content h3 {
-  color: #ad00ff;
-}
-
-.footer-content li {
-  margin-top: 1em;
-}
-
-.footer-content button {
-  margin-top: 2em;
-}
-
-.footer-content > img {
-  width: 100%;
-  height: auto;
-}
 </style>
