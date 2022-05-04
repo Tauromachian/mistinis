@@ -1,5 +1,5 @@
 <template>
-  <section class="container races">
+  <section class="races">
     <div class="tab">
       <a
         class="tablinks active"
@@ -10,7 +10,7 @@
       <a class="tablinks" @click="(event) => openCity(event, 'tab-uritonai')">
         Uritonai
       </a>
-      <a class="tablinks" @click="(event) => openCity(event, 'tab-tabakisai')">
+      <a class="tablinks" @click="(event) => openCity(event, 'tab-tabaksiai')">
         Tabaksiai
       </a>
       <a class="tablinks" @click="(event) => openCity(event, 'tab-minotaurai')">
@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div id="tab-tabakisai" class="tabcontent">
+    <div id="tab-tabaksiai" class="tabcontent">
       <div class="tabcontent-content">
         <img src="images/rases_img/Tabaksis.png" alt="" />
         <div class="tab-description">
@@ -154,6 +154,7 @@ export default {
   display: none;
   padding: 6px 12px;
   border-top: none;
+  width: 100%;
 }
 
 .tabcontent-content {
@@ -174,5 +175,26 @@ export default {
 
 #tab-halfingai {
   display: block;
+  background-image: url('/images/rases_img/Haflingai_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tab-uritonai {
+  background-image: url('/images/rases_img/Uritonai_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tab-tabaksiai {
+  background-image: url('/images/rases_img/Tabaksiai_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tab-minotaurai {
+  background-image: url('/images/rases_img/Minotaurai_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
