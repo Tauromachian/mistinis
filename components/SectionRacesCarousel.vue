@@ -1,16 +1,16 @@
 <template>
   <section class="container races">
     <div class="tab">
-      <a class="tablinks" @click="openCity(event, 'tab-halfingai')">
+      <a class="tablinks" @click="(event) => openCity(event, 'tab-halfingai')">
         Halfingai
       </a>
-      <a class="tablinks" @click="openCity(event, 'tab-uritonai')">
+      <a class="tablinks" @click="(event) => openCity(event, 'tab-uritonai')">
         Uritonai
       </a>
-      <a class="tablinks" @click="openCity(event, 'tab-tabakisai')">
+      <a class="tablinks" @click="(event) => openCity(event, 'tab-tabakisai')">
         Tabaksiai
       </a>
-      <a class="tablinks" @click="openCity(event, 'tab-minotaurai')">
+      <a class="tablinks" @click="(event) => openCity(event, 'tab-minotaurai')">
         Minotaurai
       </a>
     </div>
@@ -119,7 +119,7 @@ export default {
 
 /* Create an active/current tablink class */
 .tab a.active {
-  background-color: #ccc;
+  color: #ad00ff;
 }
 
 /* Style the tab content */
