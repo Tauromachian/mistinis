@@ -20,7 +20,7 @@
     <div id="tab-halfingai" class="tabcontent">
       <div class="tabcontent-content">
         <img src="images/rases_img/Haflingas.png" alt="" />
-        <div>
+        <div class="tab-description">
           <h2>Halfingai</h2>
           <p>
             Haflingai yra draugiškiausia bendruomenė su kuriais galite
@@ -43,7 +43,7 @@
     <div id="tab-uritonai" class="tabcontent">
       <div class="tabcontent-content">
         <img src="images/rases_img/Uritonas.png" alt="" />
-        <div>
+        <div class="tab-description">
           <h2>Uritonai</h2>
           <p>
             Uritonai yra iš vandens bakterijų išsivystę humanoidai, kurių
@@ -69,7 +69,7 @@
     <div id="tab-tabakisai" class="tabcontent">
       <div class="tabcontent-content">
         <img src="images/rases_img/Tabaksis.png" alt="" />
-        <div>
+        <div class="tab-description">
           <h2>Tabaksiai</h2>
           <p>
             Tabaksiai yra iš žinduolių-kačių išsivystę humanoidai, kurių
@@ -90,7 +90,7 @@
     <div id="tab-minotaurai" class="tabcontent">
       <div class="tabcontent-content">
         <img src="images/rases_img/Minotauras.png" alt="" />
-        <div>
+        <div class="tab-description">
           <h2>Minotaurai</h2>
           <p>
             Minotaurai yra į galingus stumbrus panašūs humanoidai, turintys
@@ -165,7 +165,7 @@ export default {
   height: auto;
 }
 
-.tabcontent-content > div {
+.tabcontent-content > .tab-description {
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
