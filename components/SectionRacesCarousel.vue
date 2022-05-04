@@ -197,10 +197,18 @@ section {
   background-size: cover;
 }
 
+#tab-halfingai h2 {
+  color: #05ff00;
+}
+
 #tab-uritonai {
   background-image: url('/images/rases_img/Uritonai_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#tab-uritonai h2 {
+  color: #0038ff;
 }
 
 #tab-tabaksiai {
@@ -209,9 +217,17 @@ section {
   background-size: cover;
 }
 
+#tab-tabaksiai h2 {
+  color: #ffe600;
+}
+
 #tab-minotaurai {
   background-image: url('/images/rases_img/Minotaurai_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#tab-minotaurai h2 {
+  color: #ff0000;
 }
 </style>
