@@ -265,11 +265,6 @@ h5 {
   text-align: center;
 }
 
-.istorija p {
-  padding: 0 170px;
-  margin-bottom: 20%;
-}
-
 /* Races */
 .races ul {
   display: flex;
