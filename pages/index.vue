@@ -23,7 +23,7 @@
       </div>
     </section>
 
-    <section class="istorija">
+    <section class="istorija container">
       <div>
         <h1>Istorija</h1>
         <p>
