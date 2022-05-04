@@ -265,34 +265,6 @@ h5 {
   text-align: center;
 }
 
-/* Races */
-.races ul {
-  display: flex;
-  list-style-type: none;
-  justify-content: center;
-}
-
-.races ul li {
-  width: 100px;
-  display: flex;
-  list-style-type: none;
-  justify-content: center;
-}
-
-.nav-rases {
-  border-right: 2px solid white;
-  margin-bottom: 15%;
-}
-
-#rases-h {
-  margin: 0 42%;
-}
-
-#rases-p {
-  margin-left: 42%;
-  margin-right: 5%;
-}
-
 .servers__title-container {
   text-align: center;
 }
@@ -313,24 +285,6 @@ button {
   border: none;
   width: 154.62px;
   height: 44.93px;
-}
-
-.haflingai-bg {
-  display: block;
-  background: url(/images/rases_img/Haflingai_bg.png);
-  background-repeat: no-repeat;
-}
-
-.uritonai {
-  display: none;
-}
-
-.tabaksiai {
-  display: none;
-}
-
-.minotaurai {
-  display: none;
 }
 
 .slider-container {
