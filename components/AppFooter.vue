@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer id="footer">
     <div class="container footer-content">
       <div class="footer-content-text">
         <h2>Turi klausimų?</h2>

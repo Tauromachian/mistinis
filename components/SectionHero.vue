@@ -3,11 +3,9 @@
     <header>
       <nav v-if="!isScreenSmall">
         <ul>
-          <li><a href="#">Pagrindinis</a></li>
-          <li><a href="#">Istorija</a></li>
-          <li><a href="#">Rasės</a></li>
-          <li><a href="#">Galerija</a></li>
-          <li><a href="#">Kontaktai</a></li>
+          <li v-for="(link, index) in links" :key="`link-${link}-${index}`">
+            <a :href="link.url">{{ link.text }}</a>
+          </li>
         </ul>
       </nav>
       <div v-else>
@@ -17,11 +15,12 @@
         <div id="modal">
           <nav class="modal-nav">
             <ul class="modal-links">
-              <li><a href="#">Pagrindinis</a></li>
-              <li><a href="#">Istorija</a></li>
-              <li><a href="#">Rasės</a></li>
-              <li><a href="#">Galerija</a></li>
-              <li><a href="#">Kontaktai</a></li>
+              <li
+                v-for="(link, index) in links"
+                :key="`modal-link-${link}-${index}`"
+              >
+                <a :href="link.url">{{ link.text }}</a>
+              </li>
             </ul>
           </nav>
           <button
@@ -51,6 +50,13 @@ export default {
       modal: {},
       body: {},
       width: '',
+      links: [
+        { text: 'Pagrindis', url: '#' },
+        { text: 'Istorija', url: '#section-history' },
+        { text: 'Rasės', url: '#section-races-carousel' },
+        { text: 'Galerija', url: '#section-servers' },
+        { text: 'Kontaktai', url: '#footer' },
+      ],
     }
   },
   computed: {

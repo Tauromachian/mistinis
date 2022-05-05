@@ -1,5 +1,5 @@
 <template>
-  <section class="servers">
+  <section id="section-servers" class="servers">
     <div class="slider-container">
       <div class="slider-content">
         <div class="slider-single">

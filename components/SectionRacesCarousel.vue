@@ -1,5 +1,5 @@
 <template>
-  <section class="races">
+  <section id="section-races-carousel" class="races">
     <div class="tab">
       <a
         class="tablinks active"
