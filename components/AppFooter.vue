@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container footer-content">
-      <div>
+      <div class="footer-content-text">
         <h2>Turi klausimų?</h2>
         <h3>Susiek su mumis!</h3>
         <ul>
@@ -37,13 +37,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer {
-  padding-top: 10em;
-}
-
 .footer-content {
   display: flex;
   max-width: 800px;
+}
+
+.footer-content-text {
+  padding: 10em 0em;
 }
 
 .footer-content > div {
