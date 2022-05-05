@@ -137,6 +137,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
+  overflow: hidden;
   position: relative;
   height: fit-content;
   padding-top: 0;
