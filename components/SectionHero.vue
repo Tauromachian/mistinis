@@ -63,7 +63,31 @@ nav ul li a {
 #logo {
   display: block;
   margin: 0 auto;
-  width: 30%;
+  width: 100%;
+}
+
+@media screen and (min-width: 540px) {
+  #logo {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  #logo {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #logo {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #logo {
+    width: 30%;
+  }
 }
 
 #discord {
