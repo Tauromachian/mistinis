@@ -1,5 +1,9 @@
 <template>
   <section id="section-servers" class="servers">
+    <div class="title-container">
+      <h1>Vaizdai iš serverio</h1>
+    </div>
+
     <div class="slider-container">
       <div class="slider-content">
         <div class="slider-single">
@@ -372,5 +376,10 @@ body {
   .not-visible {
     display: none !important;
   }
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
 }
 </style>
