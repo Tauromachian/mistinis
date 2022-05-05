@@ -43,12 +43,14 @@ export default {
   display: flex;
   position: relative;
   h2 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     font-weight: bold;
   }
   h3 {
     color: #ad00ff;
-    font-size: 2.4rem;
+    font-weight: 500;
+    font-size: 3.2rem;
+    margin-bottom: 0.8em;
   }
 
   ul {
