@@ -88,6 +88,7 @@ button {
   border: none;
   width: 154.62px;
   height: 44.93px;
+  cursor: pointer;
 }
 
 /* Footer */
