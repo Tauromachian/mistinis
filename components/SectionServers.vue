@@ -241,15 +241,6 @@ $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
     transform: scale(1);
   }
 }
-body {
-  color: #ffffff;
-  background-color: #27292d;
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 1200px;
-}
 .slider-container {
   position: relative;
   margin: 0 auto;
