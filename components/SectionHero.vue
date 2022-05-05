@@ -131,7 +131,8 @@ button {
   justify-content: center;
 }
 
-.modal-open-button {
+.modal-open-button,
+.modal-close-button {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -140,14 +141,6 @@ button {
   padding: 1em;
   display: flex;
   align-content: center;
-  background-color: transparent;
-}
-
-.modal-close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1.5rem;
   background-color: transparent;
   i {
     color: white;
