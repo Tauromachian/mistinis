@@ -224,23 +224,7 @@ export default {
 $time: 500ms;
 $delay: calc($time/2);
 $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
-@keyframes heartbeat {
-  0% {
-    transform: scale(0);
-  }
-  25% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+
 .slider-container {
   position: relative;
   margin: 0 auto;
