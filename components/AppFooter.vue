@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-size: 2rem;
+}
+
 .footer-content {
   display: flex;
   max-width: 800px;
