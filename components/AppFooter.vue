@@ -5,6 +5,10 @@
         <h2>Turi klausimų?</h2>
         <h3>Susiek su mumis!</h3>
         <ul>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            MistinisPasaulis
+          </li>
           <li><i class="fa-brands fa-facebook-f" />MistinisPasaulis</li>
           <li>
             <i class="fa-brands fa-discord"></i>
@@ -12,10 +16,6 @@
           </li>
           <li>
             <i class="fa-brands fa-facebook"></i>
-            MistinisPasaulis
-          </li>
-          <li>
-            <i class="fa-solid fa-envelope"></i>
             MistinisPasaulis
           </li>
         </ul>
