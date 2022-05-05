@@ -209,9 +209,15 @@ nav ul li a {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   #logo {
     width: 30%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #logo {
+    width: 40%;
   }
 }
 
