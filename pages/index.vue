@@ -40,6 +40,10 @@ section {
 }
 
 /* Utility classes */
+.hidden {
+  display: none;
+}
+
 .container {
   max-width: 100%;
 }

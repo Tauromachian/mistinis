@@ -98,10 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hidden {
-  display: none;
-}
-
 #modal {
   display: none;
   position: fixed;
