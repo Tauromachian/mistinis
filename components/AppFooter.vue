@@ -26,7 +26,9 @@
         alt="An ugly ass goblin"
       />
     </div>
-    <p id="copyright">Visos teisės saugomos @MistinisPasaulis 2022</p>
+    <div class="copyright">
+      <p>Visos teisės saugomos @MistinisPasaulis 2022</p>
+    </div>
   </footer>
 </template>
 
@@ -37,45 +39,59 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 2rem;
-}
-
 .footer-content {
   display: flex;
-  max-width: 800px;
+  position: relative;
+  h2 {
+    font-size: 3.8rem;
+    font-weight: bold;
+  }
+  h3 {
+    color: #ad00ff;
+    font-size: 2.4rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-top: 1em;
+  }
+
+  i {
+    font-size: 1.4rem;
+  }
+
+  button {
+    margin-top: 2em;
+  }
+
+  .footer-content-text {
+    position: relative;
+    z-index: 10;
+    padding: 10em 0em 30em 0em;
+    div {
+      flex-basis: 50%;
+    }
+  }
+
+  img {
+    z-index: 0;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
 }
 
-.footer-content-text {
-  padding: 10em 0em;
-}
-
-.footer-content > div {
-  flex-basis: 50%;
-}
-
-.footer-content h3 {
-  color: #ad00ff;
-}
-
-.footer-content li {
-  margin-top: 1em;
-}
-
-.footer-content button {
-  margin-top: 2em;
-}
-
-.footer-content > img {
-  width: 100%;
-  height: auto;
-}
-
-ul {
-  list-style: none;
-}
-
-i {
-  font-size: 1.4rem;
+.copyright {
+  padding: 15px;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 29px;
+  text-align: center;
+  color: white;
+  background: black;
 }
 </style>
