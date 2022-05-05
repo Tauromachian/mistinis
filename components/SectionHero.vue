@@ -1,14 +1,14 @@
 <template>
   <section class="hero">
     <header>
-      <nav v-if="!isScreenSmall">
+      <nav v-show="!isScreenSmall">
         <ul>
           <li v-for="(link, index) in links" :key="`link-${link}-${index}`">
             <a :href="link.url">{{ link.text }}</a>
           </li>
         </ul>
       </nav>
-      <div v-else>
+      <div v-show="isScreenSmall">
         <button class="modal-open-button" @click="openModal">
           <i class="fa-solid fa-bars"></i>
         </button>
