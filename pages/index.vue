@@ -82,16 +82,6 @@ section {
   text-align: center;
 }
 
-#copyright {
-  padding: 15px;
-  font-style: normal;
-  font-size: 17px;
-  line-height: 29px;
-  text-align: center;
-  color: white;
-  background: black;
-}
-
 button {
   background: #010101;
   color: white;
