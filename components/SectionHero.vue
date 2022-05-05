@@ -98,10 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-button {
-  cursor: pointer;
-}
-
 .hidden {
   display: none;
 }
