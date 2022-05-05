@@ -1,17 +1,15 @@
 <template>
   <section class="hero">
     <header>
-      <div class="pagrindinisbg">
-        <nav>
-          <ul>
-            <li><a href="#">Pagrindinis</a></li>
-            <li><a href="#">Istorija</a></li>
-            <li><a href="#">Rasės</a></li>
-            <li><a href="#">Galerija</a></li>
-            <li><a href="#">Kontaktai</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Pagrindinis</a></li>
+          <li><a href="#">Istorija</a></li>
+          <li><a href="#">Rasės</a></li>
+          <li><a href="#">Galerija</a></li>
+          <li><a href="#">Kontaktai</a></li>
+        </ul>
+      </nav>
     </header>
     <div class="pagrindinis">
       <img id="logo" src="/images/logo.png" alt="" />
