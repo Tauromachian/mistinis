@@ -77,7 +77,6 @@ export default {
   mounted() {
     this.modal = document.getElementById('modal')
     this.body = document.body
-    this.closeModal()
     this.width = window.innerWidth
     window.addEventListener('resize', () => {
       this.width = window.innerWidth
@@ -158,6 +157,9 @@ nav {
       margin-top: 50px;
       list-style-type: none;
       width: 130px;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
