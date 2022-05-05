@@ -7,12 +7,15 @@
       >
         Halfingai
       </a>
+      <span>|</span>
       <a class="tablinks" @click="(event) => openCity(event, 'tab-uritonai')">
         Uritonai
       </a>
+      <span>|</span>
       <a class="tablinks" @click="(event) => openCity(event, 'tab-tabaksiai')">
         Tabaksiai
       </a>
+      <span>|</span>
       <a class="tablinks" @click="(event) => openCity(event, 'tab-minotaurai')">
         Minotaurai
       </a>
