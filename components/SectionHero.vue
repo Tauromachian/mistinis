@@ -149,10 +149,9 @@ button {
   right: 20px;
   font-size: 1.5rem;
   background-color: transparent;
-}
-
-.modal-close-button > i {
-  color: white;
+  i {
+    color: white;
+  }
 }
 
 .hero {
