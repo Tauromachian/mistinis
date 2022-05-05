@@ -158,23 +158,16 @@ button {
 
 nav {
   text-align: center;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  text-align: center;
-  margin-top: 50px;
-  list-style-type: none;
-  width: 130px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: inherit;
+  ul {
+    display: flex;
+    justify-content: center;
+    li {
+      text-align: center;
+      margin-top: 50px;
+      list-style-type: none;
+      width: 130px;
+    }
+  }
 }
 
 #logo {
