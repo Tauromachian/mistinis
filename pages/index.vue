@@ -94,6 +94,10 @@ button {
   width: 154.62px;
   height: 44.93px;
   cursor: pointer;
+  background: #ad00ff;
+  &:hover {
+    box-shadow: 0px 0px 20px #ad00ff;
+  }
 }
 
 /* Footer */
