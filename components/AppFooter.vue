@@ -133,7 +133,8 @@ footer {
   .footer-content-text {
     position: relative;
     z-index: 40;
-    padding: 2em 0em 10em 0em;
+    padding-top: 10em;
+    padding-bottom: 10em;
     div {
       flex-basis: 50%;
     }
