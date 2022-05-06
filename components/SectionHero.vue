@@ -29,7 +29,7 @@
         </div>
       </div>
     </header>
-    <div class="pagrindinis">
+    <div class="footer-content">
       <img id="logo" src="/images/logo.png" alt="" />
       <h5>
         Serverje žaidžia: <span style="font-weight: bold">25 žaidėjai</span>
@@ -93,6 +93,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  display: flex;
+  @media screen and (min-width: 540px) {
+    display: block;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and (min-width: 540px) {
+    display: block;
+  }
+}
+
 #modal {
   display: none;
   position: fixed;
