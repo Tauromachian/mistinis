@@ -43,14 +43,31 @@ export default {
   display: flex;
   position: relative;
   h2 {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: bold;
   }
+
+  @media screen and(min-width: 1500px) {
+    h2 {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  }
+
   h3 {
     color: #ad00ff;
     font-weight: 500;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     margin-bottom: 0.8em;
+  }
+
+  @media screen and(min-width: 1500px) {
+    h3 {
+      color: #ad00ff;
+      font-weight: 500;
+      font-size: 3.2rem;
+      margin-bottom: 0.8em;
+    }
   }
 
   ul {
@@ -72,9 +89,15 @@ export default {
   .footer-content-text {
     position: relative;
     z-index: 10;
-    padding: 10em 0em 30em 0em;
+    padding: 5em 0em 20em 0em;
     div {
       flex-basis: 50%;
+    }
+  }
+
+  @media screen and(min-width: 1500px) {
+    .footer-content-text {
+      padding: 10em 0em 30em 0em;
     }
   }
 
