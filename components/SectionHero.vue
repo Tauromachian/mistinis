@@ -139,14 +139,18 @@ section {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 1.5rem;
-  width: fit-content;
   padding: 1em;
+  width: fit-content;
   display: flex;
   align-content: center;
   background-color: transparent;
+  box-shadow: unset;
   i {
+    display: block;
+    height: fit-content;
+    width: fit-content;
     color: white;
+    font-size: 1.5rem;
   }
 }
 
