@@ -184,13 +184,21 @@ section {
 
   .tab-description {
     position: relative;
-    flex-basis: 60%;
+    flex-basis: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: auto;
-    padding-top: 10em;
-    padding-bottom: 10em;
+    padding-top: 8em;
+    padding-bottom: 5em;
+  }
+
+  @media screen and (min-width: 800px) {
+    .tab-description {
+      flex-basis: 60%;
+      padding-top: 10em;
+      padding-bottom: 10em;
+    }
   }
 
   @media screen and (min-width: 1500px) {
