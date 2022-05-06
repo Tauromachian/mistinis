@@ -39,6 +39,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+footer {
+  position: relative;
+
+  &::before {
+    z-index: 20;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.8);
+  }
+  @media screen and (min-width: 800px) {
+    &::before {
+      background-color: rgb(0, 0, 0, 0);
+    }
+  }
+}
+
 .footer-content {
   display: flex;
   position: relative;
@@ -112,7 +132,7 @@ export default {
 
   .footer-content-text {
     position: relative;
-    z-index: 10;
+    z-index: 40;
     padding: 2em 0em 10em 0em;
     div {
       flex-basis: 50%;
