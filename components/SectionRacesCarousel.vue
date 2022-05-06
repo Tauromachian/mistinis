@@ -152,10 +152,18 @@ section {
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   cursor: pointer;
   top: 70px;
   z-index: 100;
+
+  @media screen and (min-width: 800px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 1500px) {
+    gap: 30px;
+  }
 }
 
 /* Create an active/current tablink class */
