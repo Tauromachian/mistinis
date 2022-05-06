@@ -8,6 +8,8 @@
 
     <section-servers></section-servers>
 
+    <section-server></section-server>
+
     <app-footer> </app-footer>
   </div>
 </template>
