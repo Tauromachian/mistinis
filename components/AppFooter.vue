@@ -42,6 +42,14 @@ export default {
 .footer-content {
   display: flex;
   position: relative;
+  justify-content: center;
+  text-align: center;
+
+  @media screen and(min-width: 800px) {
+    text-align: left;
+    justify-content: left;
+  }
+
   h2 {
     font-size: 2.5rem;
     font-weight: bold;
