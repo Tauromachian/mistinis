@@ -113,9 +113,15 @@ export default {
   .footer-content-text {
     position: relative;
     z-index: 10;
-    padding: 5em 0em 20em 0em;
+    padding: 2em 0em 10em 0em;
     div {
       flex-basis: 50%;
+    }
+  }
+
+  @media screen and(min-width: 800px) {
+    .footer-content-text {
+      padding: 5em 0em 20em 0em;
     }
   }
 
