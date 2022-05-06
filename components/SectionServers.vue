@@ -228,7 +228,7 @@ $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
 .slider-container {
   position: relative;
   margin: 0 auto;
-  width: 500px;
+  width: 400px;
   height: 300px;
 
   @media screen and (min-width: 800px) {
@@ -285,20 +285,27 @@ $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
           transform: translateX(-50%) scale(0);
         }
       }
-      &.preactive {
-        z-index: 1;
-        .slider-single-image {
-          opacity: 0.3;
-          transform: translateX(-25%) scale(0.8);
+
+      @media screen and (min-width: 800px) {
+        &.preactive {
+          z-index: 1;
+          .slider-single-image {
+            opacity: 0.3;
+            transform: translateX(-25%) scale(0.8);
+          }
         }
       }
-      &.proactive {
-        z-index: 1;
-        .slider-single-image {
-          opacity: 0.3;
-          transform: translateX(25%) scale(0.8);
+
+      @media screen and (min-width: 800px) {
+        &.proactive {
+          z-index: 1;
+          .slider-single-image {
+            opacity: 0.3;
+            transform: translateX(25%) scale(0.8);
+          }
         }
       }
+
       &.proactivede {
         //z-index: 0;
         .slider-single-image {
