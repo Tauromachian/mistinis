@@ -149,6 +149,7 @@ section {
 .tab {
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
   gap: 10px;
