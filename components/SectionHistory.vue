@@ -31,10 +31,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.istorija {
+section {
   display: flex;
   justify-content: center;
   text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div {

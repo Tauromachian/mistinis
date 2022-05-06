@@ -143,8 +143,7 @@ section {
   overflow: hidden;
   position: relative;
   height: fit-content;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 5px;
 }
 
 .tab {
