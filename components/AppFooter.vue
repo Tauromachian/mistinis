@@ -43,8 +43,15 @@ export default {
   display: flex;
   position: relative;
   h2 {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
+  }
+
+  @media screen and(min-width: 800px) {
+    h2 {
+      font-size: 3.2rem;
+      font-weight: bold;
+    }
   }
 
   @media screen and(min-width: 1500px) {
@@ -57,8 +64,17 @@ export default {
   h3 {
     color: #ad00ff;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0.8em;
+  }
+
+  @media screen and(min-width: 800px) {
+    h3 {
+      color: #ad00ff;
+      font-weight: 500;
+      font-size: 2.5rem;
+      margin-bottom: 0.8em;
+    }
   }
 
   @media screen and(min-width: 1500px) {
