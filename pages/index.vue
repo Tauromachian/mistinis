@@ -28,6 +28,7 @@ export default {
 
 /* General styles */
 body {
+  font-family: 'poppins', sans-serif;
   background: url(/images/istorija.png);
   background-repeat: no-repeat;
   background-size: cover;
