@@ -228,8 +228,28 @@ $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
 .slider-container {
   position: relative;
   margin: 0 auto;
-  width: 800px;
-  height: 600px;
+  width: 380px;
+  height: 200px;
+
+  @media screen and (min-width: 800px) {
+    width: 600px;
+    height: 400px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 800px;
+    height: 600px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1000px;
+    height: 800px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: 1200px;
+    height: 1000px;
+  }
 
   .slider-content {
     position: relative;
