@@ -183,10 +183,28 @@ section {
     flex-basis: 50%;
     height: 100%;
     width: auto;
+    z-index: 10;
+  }
+
+  &::before {
+    z-index: 20;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.8);
+  }
+  @media screen and (min-width: 800px) {
+    &::before {
+      background-color: rgb(0, 0, 0, 0);
+    }
   }
 }
 
 .tabcontent-content {
+  z-index: 30;
   position: relative;
   display: flex;
 
@@ -215,6 +233,13 @@ section {
       padding-bottom: 20em;
     }
   }
+}
+
+#tab-halfingai,
+#tab-uritonai,
+#tab-tabaksiai,
+#tab-minotaurai {
+  padding: 0;
 }
 
 #tab-halfingai {
