@@ -169,29 +169,36 @@ section {
   padding: 6px 12px;
   border-top: none;
   width: 100%;
+
+  img {
+    position: absolute;
+    flex-basis: 50%;
+    height: 100%;
+    width: auto;
+  }
 }
 
 .tabcontent-content {
   position: relative;
   display: flex;
-}
 
-.tabcontent > img {
-  position: absolute;
-  flex-basis: 50%;
-  height: 100%;
-  width: auto;
-}
+  .tab-description {
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
 
-.tabcontent-content > .tab-description {
-  position: relative;
-  flex-basis: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
-  padding-top: 20em;
-  padding-bottom: 20em;
+  @media screen and (min-width: 1500px) {
+    .tab-description {
+      padding-top: 20em;
+      padding-bottom: 20em;
+    }
+  }
 }
 
 #tab-halfingai {
