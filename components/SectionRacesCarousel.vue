@@ -157,7 +157,6 @@ export default {
         function (e) {
           touchobj = e.changedTouches[0] // reference first touch point
           startx = parseInt(touchobj.clientX) // get x coord of touch point
-          e.preventDefault() // prevent default click behavior
         },
         false
       )
@@ -175,7 +174,6 @@ export default {
             } else {
               this.slideLeft(tabsIds)
             }
-            e.preventDefault()
           }),
         false
       )
