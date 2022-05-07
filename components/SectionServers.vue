@@ -59,17 +59,26 @@
 </template>
 
 <script>
+import debounce from 'basic-debouncer'
+
 export default {
   name: 'SectionServers',
+  data() {
+    return {
+      slide: null,
+      slideTotal: 0,
+      slideCurrent: 0,
+    }
+  },
   mounted() {
     const noArrows = false
 
     const container = document.querySelector('.slider-container')
-    const slide = document.querySelectorAll('.slider-single')
-    const slideTotal = slide.length - 1
-    let slideCurrent = -1
+    this.slide = document.querySelectorAll('.slider-single')
+    this.slideTotal = this.slide.length - 1
+    this.slideCurrent = -1
 
-    function initArrows() {
+    function initArrows(slideLeft, slideRight) {
       if (noArrows) {
         return
       }
@@ -80,7 +89,7 @@ export default {
       leftArrow.classList.add('slider-left')
       leftArrow.appendChild(iLeft)
       leftArrow.addEventListener('click', () => {
-        slideLeft()
+        slideLeft(proactiveSlide, preactiveSlide)
       })
       const rightArrow = document.createElement('a')
       const iRight = document.createElement('i')
@@ -89,14 +98,14 @@ export default {
       rightArrow.classList.add('slider-right')
       rightArrow.appendChild(iRight)
       rightArrow.addEventListener('click', () => {
-        slideRight()
+        slideRight(proactiveSlide, preactiveSlide)
       })
       container.appendChild(leftArrow)
       container.appendChild(rightArrow)
     }
 
-    function slideInitial() {
-      initArrows()
+    function slideInitial(slideLeft, slideRight) {
+      initArrows(slideLeft, slideRight)
       setTimeout(function () {
         slideRight()
       }, 500)
@@ -105,80 +114,64 @@ export default {
     let preactiveSlide
     let proactiveSlide
 
-    function slideRight() {
-      if (slideCurrent < slideTotal) {
-        slideCurrent++
+    slideInitial(this.slideLeft, this.slideRight)
+    this.initTouchAction(proactiveSlide, preactiveSlide)
+  },
+  methods: {
+    initTouchAction(proactiveSlide, preactiveSlide) {
+      const section = document.querySelector('.slider-container')
+
+      let startx // starting x coordinate of touch point
+      let dist = 0 // distance traveled by touch point
+      let touchobj = null // Touch object holder
+
+      section.addEventListener(
+        'touchstart',
+        function (e) {
+          touchobj = e.changedTouches[0] // reference first touch point
+          startx = parseInt(touchobj.clientX) // get x coord of touch point
+          e.preventDefault() // prevent default click behavior
+        },
+        false
+      )
+
+      section.addEventListener(
+        'touchmove',
+        (e) =>
+          debounce(() => {
+            touchobj = e.changedTouches[0] // reference first touch point for this event
+            dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+            // move box according to starting pos plus dist
+            // with lower limit 0 and upper limit 380 so it doesn't move outside track:
+            if (dist < -20) {
+              this.slideRight(proactiveSlide, preactiveSlide)
+            } else {
+              this.slideLeft(proactiveSlide, preactiveSlide)
+            }
+            e.preventDefault()
+          }),
+        false
+      )
+    },
+    slideLeft(proactiveSlide, preactiveSlide) {
+      if (this.slideCurrent > 0) {
+        this.slideCurrent--
       } else {
-        slideCurrent = 0
+        this.slideCurrent = this.slideTotal
       }
 
-      if (slideCurrent > 0) {
-        preactiveSlide = slide[slideCurrent - 1]
+      if (this.slideCurrent < this.slideTotal) {
+        proactiveSlide = this.slide[this.slideCurrent + 1]
       } else {
-        preactiveSlide = slide[slideTotal]
+        proactiveSlide = this.slide[0]
       }
-      const activeSlide = slide[slideCurrent]
-      if (slideCurrent < slideTotal) {
-        proactiveSlide = slide[slideCurrent + 1]
+      const activeSlide = this.slide[this.slideCurrent]
+      if (this.slideCurrent > 0) {
+        preactiveSlide = this.slide[this.slideCurrent - 1]
       } else {
-        proactiveSlide = slide[0]
+        preactiveSlide = this.slide[this.slideTotal]
       }
-
-      slide.forEach((elem) => {
-        const thisSlide = elem
-        if (thisSlide.classList.contains('preactivede')) {
-          thisSlide.classList.remove('preactivede')
-          thisSlide.classList.remove('preactive')
-          thisSlide.classList.remove('active')
-          thisSlide.classList.remove('proactive')
-          thisSlide.classList.add('proactivede')
-        }
-        if (thisSlide.classList.contains('preactive')) {
-          thisSlide.classList.remove('preactive')
-          thisSlide.classList.remove('active')
-          thisSlide.classList.remove('proactive')
-          thisSlide.classList.remove('proactivede')
-          thisSlide.classList.add('preactivede')
-        }
-      })
-      preactiveSlide.classList.remove('preactivede')
-      preactiveSlide.classList.remove('active')
-      preactiveSlide.classList.remove('proactive')
-      preactiveSlide.classList.remove('proactivede')
-      preactiveSlide.classList.add('preactive')
-
-      activeSlide.classList.remove('preactivede')
-      activeSlide.classList.remove('preactive')
-      activeSlide.classList.remove('proactive')
-      activeSlide.classList.remove('proactivede')
-      activeSlide.classList.add('active')
-
-      proactiveSlide.classList.remove('preactivede')
-      proactiveSlide.classList.remove('preactive')
-      proactiveSlide.classList.remove('active')
-      proactiveSlide.classList.remove('proactivede')
-      proactiveSlide.classList.add('proactive')
-    }
-
-    function slideLeft() {
-      if (slideCurrent > 0) {
-        slideCurrent--
-      } else {
-        slideCurrent = slideTotal
-      }
-
-      if (slideCurrent < slideTotal) {
-        proactiveSlide = slide[slideCurrent + 1]
-      } else {
-        proactiveSlide = slide[0]
-      }
-      const activeSlide = slide[slideCurrent]
-      if (slideCurrent > 0) {
-        preactiveSlide = slide[slideCurrent - 1]
-      } else {
-        preactiveSlide = slide[slideTotal]
-      }
-      slide.forEach((elem) => {
+      this.slide.forEach((elem) => {
         const thisSlide = elem
         if (thisSlide.classList.contains('proactive')) {
           thisSlide.classList.remove('preactivede')
@@ -213,9 +206,61 @@ export default {
       proactiveSlide.classList.remove('active')
       proactiveSlide.classList.remove('proactivede')
       proactiveSlide.classList.add('proactive')
-    }
+    },
+    slideRight(proactiveSlide, preactiveSlide) {
+      if (this.slideCurrent < this.slideTotal) {
+        this.slideCurrent++
+      } else {
+        this.slideCurrent = 0
+      }
 
-    slideInitial()
+      if (this.slideCurrent > 0) {
+        preactiveSlide = this.slide[this.slideCurrent - 1]
+      } else {
+        preactiveSlide = this.slide[this.slideTotal]
+      }
+      const activeSlide = this.slide[this.slideCurrent]
+      if (this.slideCurrent < this.slideTotal) {
+        proactiveSlide = this.slide[this.slideCurrent + 1]
+      } else {
+        proactiveSlide = this.slide[0]
+      }
+
+      this.slide.forEach((elem) => {
+        const thisSlide = elem
+        if (thisSlide.classList.contains('preactivede')) {
+          thisSlide.classList.remove('preactivede')
+          thisSlide.classList.remove('preactive')
+          thisSlide.classList.remove('active')
+          thisSlide.classList.remove('proactive')
+          thisSlide.classList.add('proactivede')
+        }
+        if (thisSlide.classList.contains('preactive')) {
+          thisSlide.classList.remove('preactive')
+          thisSlide.classList.remove('active')
+          thisSlide.classList.remove('proactive')
+          thisSlide.classList.remove('proactivede')
+          thisSlide.classList.add('preactivede')
+        }
+      })
+      preactiveSlide.classList.remove('preactivede')
+      preactiveSlide.classList.remove('active')
+      preactiveSlide.classList.remove('proactive')
+      preactiveSlide.classList.remove('proactivede')
+      preactiveSlide.classList.add('preactive')
+
+      activeSlide.classList.remove('preactivede')
+      activeSlide.classList.remove('preactive')
+      activeSlide.classList.remove('proactive')
+      activeSlide.classList.remove('proactivede')
+      activeSlide.classList.add('active')
+
+      proactiveSlide.classList.remove('preactivede')
+      proactiveSlide.classList.remove('preactive')
+      proactiveSlide.classList.remove('active')
+      proactiveSlide.classList.remove('proactivede')
+      proactiveSlide.classList.add('proactive')
+    },
   },
 }
 </script>
