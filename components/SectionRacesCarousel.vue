@@ -166,19 +166,25 @@ export default {
           dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
           // move box according to starting pos plus dist
           // with lower limit 0 and upper limit 380 so it doesn't move outside track:
-          let index
           if (dist < -20) {
-            index = this.getIndexOfNextTabToActivate(tabsIds, 'right')
+            this.slideRight(tabsIds)
           } else {
-            index = this.getIndexOfNextTabToActivate(tabsIds, 'left')
+            this.slideLeft(tabsIds)
           }
-          document.getElementById(tabsIds[index]).click()
           e.preventDefault()
         }),
       false
     )
   },
   methods: {
+    slideLeft(tabsIds) {
+      const index = this.getIndexOfNextTabToActivate(tabsIds, 'left')
+      document.getElementById(tabsIds[index]).click()
+    },
+    slideRight(tabsIds) {
+      const index = this.getIndexOfNextTabToActivate(tabsIds, 'right')
+      document.getElementById(tabsIds[index]).click()
+    },
     getIndexOfNextTabToActivate(tabs, direction) {
       const index = this.getIndexOfActiveTab(tabs)
       if (direction === 'right') {
