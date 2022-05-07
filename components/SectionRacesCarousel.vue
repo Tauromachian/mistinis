@@ -191,7 +191,6 @@ export default {
     getIndexOfNextTabToActivate(tabs, direction) {
       const index = this.getIndexOfActiveTab(tabs)
       if (direction === 'right') {
-        console.log(this.getIndexOfRightTab(index, tabs.length - 1))
         return this.getIndexOfRightTab(index, tabs.length - 1)
       } else {
         return this.getIndexOfLeftTab(index, tabs.length - 1)
