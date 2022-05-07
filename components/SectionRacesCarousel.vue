@@ -136,47 +136,50 @@ import debounce from 'basic-debouncer'
 export default {
   name: 'SectionRacesCarousel',
   mounted() {
-    const section = document.getElementById('section-races-carousel')
-    const tabsIds = [
-      'tab-button-halfingai',
-      'tab-button-uritonai',
-      'tab-button-tabaksiai',
-      'tab-button-minotaurai',
-    ]
-
-    let startx // starting x coordinate of touch point
-    let dist = 0 // distance traveled by touch point
-    let touchobj = null // Touch object holder
-
-    section.addEventListener(
-      'touchstart',
-      function (e) {
-        touchobj = e.changedTouches[0] // reference first touch point
-        startx = parseInt(touchobj.clientX) // get x coord of touch point
-        e.preventDefault() // prevent default click behavior
-      },
-      false
-    )
-
-    section.addEventListener(
-      'touchmove',
-      (e) =>
-        debounce(() => {
-          touchobj = e.changedTouches[0] // reference first touch point for this event
-          dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
-          // move box according to starting pos plus dist
-          // with lower limit 0 and upper limit 380 so it doesn't move outside track:
-          if (dist < -20) {
-            this.slideRight(tabsIds)
-          } else {
-            this.slideLeft(tabsIds)
-          }
-          e.preventDefault()
-        }),
-      false
-    )
+    this.initTouchAction()
   },
   methods: {
+    initTouchAction() {
+      const section = document.getElementById('section-races-carousel')
+      const tabsIds = [
+        'tab-button-halfingai',
+        'tab-button-uritonai',
+        'tab-button-tabaksiai',
+        'tab-button-minotaurai',
+      ]
+
+      let startx // starting x coordinate of touch point
+      let dist = 0 // distance traveled by touch point
+      let touchobj = null // Touch object holder
+
+      section.addEventListener(
+        'touchstart',
+        function (e) {
+          touchobj = e.changedTouches[0] // reference first touch point
+          startx = parseInt(touchobj.clientX) // get x coord of touch point
+          e.preventDefault() // prevent default click behavior
+        },
+        false
+      )
+
+      section.addEventListener(
+        'touchmove',
+        (e) =>
+          debounce(() => {
+            touchobj = e.changedTouches[0] // reference first touch point for this event
+            dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+            // move box according to starting pos plus dist
+            // with lower limit 0 and upper limit 380 so it doesn't move outside track:
+            if (dist < -20) {
+              this.slideRight(tabsIds)
+            } else {
+              this.slideLeft(tabsIds)
+            }
+            e.preventDefault()
+          }),
+        false
+      )
+    },
     slideLeft(tabsIds) {
       const index = this.getIndexOfNextTabToActivate(tabsIds, 'left')
       document.getElementById(tabsIds[index]).click()
