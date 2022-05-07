@@ -2,21 +2,34 @@
   <section id="section-races-carousel" class="races">
     <div class="tab">
       <a
+        id="tab-button-halfingai"
         class="tablinks active"
         @click="(event) => openCity(event, 'tab-halfingai')"
       >
         Halfingai
       </a>
       <span>|</span>
-      <a class="tablinks" @click="(event) => openCity(event, 'tab-uritonai')">
+      <a
+        id="tab-button-uritonai"
+        class="tablinks"
+        @click="(event) => openCity(event, 'tab-uritonai')"
+      >
         Uritonai
       </a>
       <span>|</span>
-      <a class="tablinks" @click="(event) => openCity(event, 'tab-tabaksiai')">
+      <a
+        id="tab-button-tabaksiai"
+        class="tablinks"
+        @click="(event) => openCity(event, 'tab-tabaksiai')"
+      >
         Tabaksiai
       </a>
       <span>|</span>
-      <a class="tablinks" @click="(event) => openCity(event, 'tab-minotaurai')">
+      <a
+        id="tab-button-minotaurai"
+        class="tablinks"
+        @click="(event) => openCity(event, 'tab-minotaurai')"
+      >
         Minotaurai
       </a>
     </div>
@@ -118,9 +131,78 @@
 </template>
 
 <script>
+import debounce from 'basic-debouncer'
+
 export default {
   name: 'SectionRacesCarousel',
+  mounted() {
+    const section = document.getElementById('section-races-carousel')
+    const tabsIds = [
+      'tab-button-halfingai',
+      'tab-button-uritonai',
+      'tab-button-tabaksiai',
+      'tab-button-minotaurai',
+    ]
+
+    let startx // starting x coordinate of touch point
+    let dist = 0 // distance traveled by touch point
+    let touchobj = null // Touch object holder
+
+    section.addEventListener(
+      'touchstart',
+      function (e) {
+        touchobj = e.changedTouches[0] // reference first touch point
+        startx = parseInt(touchobj.clientX) // get x coord of touch point
+        e.preventDefault() // prevent default click behavior
+      },
+      false
+    )
+
+    section.addEventListener(
+      'touchmove',
+      (e) =>
+        debounce(() => {
+          touchobj = e.changedTouches[0] // reference first touch point for this event
+          dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+          // move box according to starting pos plus dist
+          // with lower limit 0 and upper limit 380 so it doesn't move outside track:
+          let index
+          if (dist < -20) {
+            index = this.getIndexOfNextTabToActivate(tabsIds, 'right')
+          } else {
+            index = this.getIndexOfNextTabToActivate(tabsIds, 'left')
+          }
+          document.getElementById(tabsIds[index]).click()
+          e.preventDefault()
+        }),
+      false
+    )
+  },
   methods: {
+    getIndexOfNextTabToActivate(tabs, direction) {
+      const index = this.getIndexOfActiveTab(tabs)
+      if (direction === 'right') {
+        console.log(this.getIndexOfRightTab(index, tabs.length - 1))
+        return this.getIndexOfRightTab(index, tabs.length - 1)
+      } else {
+        return this.getIndexOfLeftTab(index, tabs.length - 1)
+      }
+    },
+    getIndexOfRightTab(index, length) {
+      if (index === length) return 0
+      return ++index
+    },
+    getIndexOfLeftTab(index, length) {
+      if (index === 0) return length
+      return --index
+    },
+    getIndexOfActiveTab(tabs) {
+      const tab = tabs.find((tab) => {
+        const tabTag = document.getElementById(tab)
+        return tabTag.classList.contains('active')
+      })
+      return tabs.indexOf(tab)
+    },
     openCity(evt, raceName) {
       let i
       const tabcontent = document.getElementsByClassName('tabcontent')
