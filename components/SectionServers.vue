@@ -276,6 +276,11 @@ $mode: cubic-bezier(0.17, 0.67, 0.55, 1.43);
   width: 340px;
   height: 300px;
 
+  @media screen and (min-width: 700px) {
+    width: 600px;
+    height: 400px;
+  }
+
   @media screen and (min-width: 800px) {
     width: 600px;
     height: 400px;
