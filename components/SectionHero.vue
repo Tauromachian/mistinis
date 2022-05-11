@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="section-hero">
     <header>
       <nav v-show="!isScreenSmall">
         <ul>
@@ -93,138 +93,135 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  display: flex;
-  @media screen and (min-width: 540px) {
-    display: block;
-  }
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media screen and (min-width: 540px) {
-    display: block;
-  }
-}
-
-#modal {
-  display: none;
-  position: fixed;
-  background-color: rgb(14, 13, 13);
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-.modal-nav {
-  height: 100%;
-}
-
-.modal-links {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-open-button,
-.modal-close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  padding: 1em;
-  width: fit-content;
-  display: flex;
-  align-content: center;
-  background-color: transparent;
-  box-shadow: unset;
-  i {
-    display: block;
-    height: fit-content;
-    width: fit-content;
-    color: white;
-    font-size: 1.5rem;
-  }
-}
-
-.hero {
+.section-hero {
   padding-top: 0em;
   padding-bottom: 0em;
   height: 100vh;
   background: url(/images/test.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
-}
+  display: flex;
+  @media screen and (min-width: 540px) {
+    display: block;
+  }
 
-nav {
-  text-align: center;
-  ul {
+  .footer-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    li {
-      text-align: center;
-      margin-top: 50px;
-      list-style-type: none;
-      width: 130px;
-      a {
-        text-decoration: none;
+    @media screen and (min-width: 540px) {
+      display: block;
+    }
+  }
+
+  #modal {
+    display: none;
+    position: fixed;
+    background-color: rgb(14, 13, 13);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .modal-nav {
+    height: 100%;
+  }
+
+  .modal-links {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-open-button,
+  .modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 1em;
+    width: fit-content;
+    display: flex;
+    align-content: center;
+    background-color: transparent;
+    box-shadow: unset;
+    i {
+      display: block;
+      height: fit-content;
+      width: fit-content;
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+
+  nav {
+    text-align: center;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        text-align: center;
+        margin-top: 50px;
+        list-style-type: none;
+        width: 130px;
+        a {
+          text-decoration: none;
+        }
       }
     }
   }
-}
 
-#logo {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-
-@media screen and (min-width: 540px) {
   #logo {
-    width: 80%;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
   }
-}
 
-@media screen and (min-width: 840px) {
-  #logo {
-    width: 60%;
+  @media screen and (min-width: 540px) {
+    #logo {
+      width: 80%;
+    }
   }
-}
 
-@media screen and (min-width: 1000px) {
-  #logo {
-    width: 40%;
+  @media screen and (min-width: 840px) {
+    #logo {
+      width: 60%;
+    }
   }
-}
 
-@media screen and (min-width: 1200px) {
-  #logo {
-    width: 30%;
+  @media screen and (min-width: 1000px) {
+    #logo {
+      width: 40%;
+    }
   }
-}
 
-@media screen and (min-width: 1400px) {
-  #logo {
-    width: 40%;
+  @media screen and (min-width: 1200px) {
+    #logo {
+      width: 30%;
+    }
   }
-}
 
-#discord {
-  text-align: center;
-}
+  @media screen and (min-width: 1400px) {
+    #logo {
+      width: 40%;
+    }
+  }
 
-h5 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 20px;
-  margin-top: 0px;
-  margin-bottom: 2%;
+  #discord {
+    text-align: center;
+  }
+
+  h5 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 2%;
+  }
 }
 </style>

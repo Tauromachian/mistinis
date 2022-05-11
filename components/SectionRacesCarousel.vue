@@ -1,5 +1,5 @@
 <template>
-  <section id="section-races-carousel" class="races">
+  <section class="section-races-carousel">
     <div class="tab">
       <a
         id="tab-button-halfingai"
@@ -227,147 +227,145 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.section-races-carousel {
   overflow: hidden;
   position: relative;
   height: fit-content;
   padding: 0 5px;
-}
-
-.tab {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  top: 70px;
-  z-index: 100;
-
-  @media screen and (min-width: 800px) {
-    gap: 20px;
-  }
-
-  @media screen and (min-width: 1500px) {
-    gap: 30px;
-  }
-}
-
-/* Create an active/current tablink class */
-.tab a.active {
-  color: #ad00ff;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border-top: none;
-  width: 100%;
-
-  img {
+  .tab {
     position: absolute;
-    flex-basis: 50%;
-    height: 100%;
-    width: auto;
-    z-index: 10;
-  }
-
-  &::before {
-    z-index: 20;
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-color: rgb(0, 0, 0, 0.8);
-  }
-  @media screen and (min-width: 800px) {
-    &::before {
-      background-color: rgb(0, 0, 0, 0);
-    }
-  }
-}
-
-.tabcontent-content {
-  z-index: 30;
-  position: relative;
-  display: flex;
-
-  .tab-description {
-    position: relative;
-    flex-basis: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
-    margin-left: auto;
-    padding-top: 8em;
-    padding-bottom: 5em;
+    gap: 10px;
+    cursor: pointer;
+    top: 70px;
+    z-index: 100;
+
+    @media screen and (min-width: 800px) {
+      gap: 20px;
+    }
+
+    @media screen and (min-width: 1500px) {
+      gap: 30px;
+    }
+  }
+  /* Create an active/current tablink class */
+  .tab a.active {
+    color: #ad00ff;
   }
 
-  @media screen and (min-width: 800px) {
-    .tab-description {
-      flex-basis: 60%;
-      padding-top: 10em;
-      padding-bottom: 10em;
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    width: 100%;
+
+    img {
+      position: absolute;
+      flex-basis: 50%;
+      height: 100%;
+      width: auto;
+      z-index: 10;
+    }
+
+    &::before {
+      z-index: 20;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgb(0, 0, 0, 0.8);
+    }
+    @media screen and (min-width: 800px) {
+      &::before {
+        background-color: rgb(0, 0, 0, 0);
+      }
     }
   }
 
-  @media screen and (min-width: 1500px) {
+  .tabcontent-content {
+    z-index: 30;
+    position: relative;
+    display: flex;
+
     .tab-description {
-      padding-top: 20em;
-      padding-bottom: 20em;
+      position: relative;
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: auto;
+      padding-top: 8em;
+      padding-bottom: 5em;
+    }
+
+    @media screen and (min-width: 800px) {
+      .tab-description {
+        flex-basis: 60%;
+        padding-top: 10em;
+        padding-bottom: 10em;
+      }
+    }
+
+    @media screen and (min-width: 1500px) {
+      .tab-description {
+        padding-top: 20em;
+        padding-bottom: 20em;
+      }
     }
   }
-}
 
-#tab-halfingai,
-#tab-uritonai,
-#tab-tabaksiai,
-#tab-minotaurai {
-  padding: 0;
-}
+  #tab-halfingai,
+  #tab-uritonai,
+  #tab-tabaksiai,
+  #tab-minotaurai {
+    padding: 0;
+  }
 
-#tab-halfingai {
-  display: block;
-  background-image: url('/images/rases_img/Haflingai_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  #tab-halfingai {
+    display: block;
+    background-image: url('/images/rases_img/Haflingai_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-#tab-halfingai h2 {
-  color: #05ff00;
-}
+  #tab-halfingai h2 {
+    color: #05ff00;
+  }
 
-#tab-uritonai {
-  background-image: url('/images/rases_img/Uritonai_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  #tab-uritonai {
+    background-image: url('/images/rases_img/Uritonai_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-#tab-uritonai h2 {
-  color: #0038ff;
-}
+  #tab-uritonai h2 {
+    color: #0038ff;
+  }
 
-#tab-tabaksiai {
-  background-image: url('/images/rases_img/Tabaksiai_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  #tab-tabaksiai {
+    background-image: url('/images/rases_img/Tabaksiai_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-#tab-tabaksiai h2 {
-  color: #ffe600;
-}
+  #tab-tabaksiai h2 {
+    color: #ffe600;
+  }
 
-#tab-minotaurai {
-  background-image: url('/images/rases_img/Minotaurai_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  #tab-minotaurai {
+    background-image: url('/images/rases_img/Minotaurai_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-#tab-minotaurai h2 {
-  color: #ff0000;
+  #tab-minotaurai h2 {
+    color: #ff0000;
+  }
 }
 </style>

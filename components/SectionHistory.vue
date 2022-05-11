@@ -1,5 +1,5 @@
 <template>
-  <section id="section-history" class="istorija container">
+  <section id="section-history" class="section-history container">
     <div>
       <h1>Istorija</h1>
       <p>
@@ -31,15 +31,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.section-history {
   display: flex;
   justify-content: center;
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-div {
-  max-width: 800px;
+  div {
+    max-width: 800px;
+  }
 }
 </style>
