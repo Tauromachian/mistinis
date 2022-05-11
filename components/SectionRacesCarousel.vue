@@ -1,5 +1,5 @@
 <template>
-  <section class="section-races-carousel">
+  <section id="section-races-carousel" class="section-races-carousel">
     <div class="tab">
       <a
         id="tab-button-halfingai"
